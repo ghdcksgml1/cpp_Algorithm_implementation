@@ -56,3 +56,5 @@ int main(void){
   inDegree[7]++;
   topologySort();
 }
+
+// 실행결과 : 1 2 5 3 4 6 7 
