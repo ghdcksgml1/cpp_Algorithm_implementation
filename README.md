@@ -1,0 +1,151 @@
+# 알고리즘 정리 🙂
+
+<br/>
+
+<table>
+  <tr>
+    <td align="center"><strong>순서</strong></td>
+    <td align="center"><strong>알고리즘</strong></td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td align="center">01</td>
+    <td align="center">선택 정렬</td>
+    <td align="center">Select Sort</td>
+  </tr>
+  <tr>
+    <td align="center">02</td>
+    <td align="center">버블 정렬</td>
+    <td align="center">Bubble Sort</td>
+  </tr>
+  <tr>
+    <td align="center">03</td>
+    <td align="center">삽입 정렬</td>
+    <td align="center">Insertion sort</td>
+  </tr>
+  <tr>
+    <td align="center">04</td>
+    <td align="center">퀵 정렬</td>
+    <td align="center">Quick Sort</td>
+  </tr>
+  <tr>
+    <td align="center">05</td>
+    <td align="center">병합 정렬</td>
+    <td align="center">Merge Sort</td>
+  </tr>
+  <tr>
+    <td align="center">06</td>
+    <td align="center">STL::Sort 사용</td>
+    <td align="center">sortMethod</td>
+  </tr>
+  <tr>
+    <td align="center">07</td>
+    <td align="center">힙 정렬</td>
+    <td align="center">Heap Sort</td>
+  </tr>
+  <tr>
+    <td align="center">08</td>
+    <td align="center">계수 정렬</td>
+    <td align="center">Counting Sort</td>
+  </tr>
+  <tr>
+    <td align="center">09</td>
+    <td align="center">스택 구현</td>
+    <td align="center">stack</td>
+  </tr>
+  <tr>
+    <td align="center">10</td>
+    <td align="center">큐 구현</td>
+    <td align="center">Queue</td>
+  </tr>
+  <tr>
+    <td align="center">11</td>
+    <td align="center">BFS(너비 우선 탐색)</td>
+    <td align="center">Breath First Search</td>
+  </tr>
+  <tr>
+    <td align="center">12</td>
+    <td align="center">DFS(깊이 우선 탐색)</td>
+    <td align="center">Depth First Search</td>
+  </tr>
+  <tr>
+    <td align="center">13</td>
+    <td align="center">유니온 파인드</td>
+    <td align="center">Union Find</td>
+  </tr>
+  <tr>
+    <td align="center">14</td>
+    <td align="center">크루스칼 알고리즘</td>
+    <td align="center">Kruskal Algorithm</td>
+  </tr>
+  <tr>
+    <td align="center">15</td>
+    <td align="center">바이너리 트리</td>
+    <td align="center">Binary Tree</td>
+  </tr>
+  <tr>
+    <td align="center">16</td>
+    <td align="center">다이나믹 프로그래밍</td>
+    <td align="center">Dynamic Programming</td>
+  </tr>
+  <tr>
+    <td align="center">17</td>
+    <td align="center">에라토스테네스의 체</td>
+    <td align="center">Prime Number</td>
+  </tr>
+  <tr>
+    <td align="center">18</td>
+    <td align="center">다익스트라 알고리즘</td>
+    <td align="center">Dijkstra Algorithm</td>
+  </tr>
+  <tr>
+    <td align="center">19</td>
+    <td align="center">parentheses</td>
+    <td align="center">Parentheses</td>
+  </tr>
+  <tr>
+    <td align="center">20</td>
+    <td align="center">쿼드 트리</td>
+    <td align="center">Quad Tree</td>
+  </tr>
+  <tr>
+    <td align="center">21</td>
+    <td align="center">백트래킹</td>
+    <td align="center">BackTracking</td>
+  </tr>
+  <tr>
+    <td align="center">22</td>
+    <td align="center">다익스트라 알고리즘2</td>
+    <td align="center">Dijkstra Algorithm2</td>
+  </tr>
+  <tr>
+    <td align="center">23</td>
+    <td align="center">유클리드 호제법</td>
+    <td align="center">Ecuild</td>
+  </tr>
+  <tr>
+    <td align="center">24</td>
+    <td align="center">이분 매칭</td>
+    <td align="center">Bipartite Matching</td>
+  </tr>
+  <tr>
+    <td align="center">25</td>
+    <td align="center">KMP 알고리즘</td>
+    <td align="center">KMP Algorithm</td>
+  </tr>
+  <tr>
+    <td align="center">26</td>
+    <td align="center">위상 정렬</td>
+    <td align="center">Topology Sort</td>
+  </tr>
+  <tr>
+    <td align="center">27</td>
+    <td align="center">세그먼트 트리</td>
+    <td align="center">Segment Tree</td>
+  </tr>
+  <tr>
+    <td align="center">28</td>
+    <td align="center">플로이드 와샬</td>
+    <td align="center">Floyd Warshall</td>
+  </tr>
+</table>
