@@ -148,4 +148,29 @@
     <td align="center">플로이드 와샬</td>
     <td align="center">Floyd Warshall</td>
   </tr>
+  <tr>
+    <td align="center">29</td>
+    <td align="center">느리게 갱신되는 세그먼트 트리</td>
+    <td align="center">Segment Tree Lazy Propagation</td>
+  </tr>
+  <tr>
+    <td align="center">30</td>
+    <td align="center">외판원 순회</td>
+    <td align="center">TSP</td>
+  </tr>
+  <tr>
+    <td align="center">31</td>
+    <td align="center">배낭 알고리즘</td>
+    <td align="center">KnapSack</td>
+  </tr>
+  <tr>
+    <td align="center">32</td>
+    <td align="center">최장 공통 문자열</td>
+    <td align="center">LCS (Longest Common Substring)</td>
+  </tr>
+  <tr>
+    <td align="center">33</td>
+    <td align="center">최장 공통 부분 문자열</td>
+    <td align="center">LCS (Longest Common Subsequence)</td>
+  </tr>
 </table>
