@@ -173,4 +173,9 @@
     <td align="center">최장 공통 부분 문자열</td>
     <td align="center">LCS (Longest Common Subsequence)</td>
   </tr>
+  <tr>
+    <td align="center">34</td>
+    <td align="center">가장 긴 증가하는 부분 수열</td>
+    <td align="center">LIS (Longest Increasing Subsequence)</td>
+  </tr>
 </table>
