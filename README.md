@@ -178,4 +178,9 @@
     <td align="center">가장 긴 증가하는 부분 수열</td>
     <td align="center">LIS (Longest Increasing Subsequence)</td>
   </tr>
+  <tr>
+    <td align="center">35</td>
+    <td align="center">가장 긴 증가하는 부분 수열</td>
+    <td align="center">LCA (Longest Common Ancestor)</td>
+  </tr>
 </table>
