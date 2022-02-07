@@ -183,4 +183,9 @@
     <td align="center">최장 공통 조상</td>
     <td align="center">LCA (Longest Common Ancestor)</td>
   </tr>
+  <tr>
+    <td align="center">36</td>
+    <td align="center">해시</td>
+    <td align="center">Hash</td>
+  </tr>
 </table>
