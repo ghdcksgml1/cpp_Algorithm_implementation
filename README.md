@@ -188,4 +188,9 @@
     <td align="center">해시</td>
     <td align="center">Hash</td>
   </tr>
+  <tr>
+    <td align="center">37</td>
+    <td align="center">트라이</td>
+    <td align="center">Trie</td>
+  </tr>
 </table>
