@@ -7,27 +7,27 @@ using namespace std;
 int number = 6;
 int INF = 1000000000;
 
-vector<pair<int, int>> a[7]; // °£¼± Á¤º¸ÀÔ´Ï´Ù.
-int d[7]; // ÃÖ¼Ò ºñ¿ëÀÔ´Ï´Ù.
+vector<pair<int, int>> a[7]; // ê°„ì„  ì •ë³´ì…ë‹ˆë‹¤.
+int d[7]; // ìµœì†Œ ë¹„ìš©ì…ë‹ˆë‹¤.
 
 void dijkstra(int start) {
 	d[start] = 0;
-	priority_queue<pair<int, int>> pq; // Èü ±¸Á¶ ÀÔ´Ï´Ù.
-	pq.push(make_pair(0, start)); // º»ÀÎÀº 0
-	// °¡±î¿î ¼ø¼­´ë·Î Ã³¸®ÇÏ¹Ç·Î Å¥¸¦ »ç¿ëÇÕ´Ï´Ù.
+	priority_queue<pair<int, int>> pq; // í™ êµ¬ì¡° ì…ë‹ˆë‹¤.
+	pq.push(make_pair(0, start)); // ë³¸ì¸ì€ 0
+	// ê°€ê¹Œìš´ ìˆœì„œëŒ€ë¡œ ì²˜ë¦¬í•˜ë¯€ë¡œ íë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤.
 	while (!pq.empty()) {
 		int current = pq.top().second;
-		// ÂªÀº °ÍÀÌ ¸ÕÀú ¿Àµµ·Ï À½¼öÈ­(-)ÇÕ´Ï´Ù.
+		// ì§§ì€ ê²ƒì´ ë¨¼ì € ì˜¤ë„ë¡ ìŒìˆ˜í™”(-)í•©ë‹ˆë‹¤.
 		int distance = -pq.top().first;
 		pq.pop();
-		// ÃÖ´Ü °Å¸®°¡ ¾Æ´Ñ°æ¿ì ½ºÅµÇÕ´Ï´Ù.
+		// ìµœë‹¨ ê±°ë¦¬ê°€ ì•„ë‹Œê²½ìš° ìŠ¤í‚µí•©ë‹ˆë‹¤.
 		if (d[current] < distance) continue;
 		for (int i = 0; i < a[current].size(); i++) {
-			// ¼±ÅÃµÈ ³ëµåÀÇ ÀÎÁ¢ ³ëµå
+			// ì„ íƒëœ ë…¸ë“œì˜ ì¸ì ‘ ë…¸ë“œ
 			int next = a[current][i].second;
-			// ¼±ÅÃµÈ ³ëµå¸¦ ÀÎÁ¢ ³ëµå·Î °ÅÃÄ¼­ °¡´Â ºñ¿ë
+			// ì„ íƒëœ ë…¸ë“œë¥¼ ì¸ì ‘ ë…¸ë“œë¡œ ê±°ì³ì„œ ê°€ëŠ” ë¹„ìš©
 			int nextDistance = distance + a[current][i].first;
-			// ±âÁ¸ÀÇ ÃÖ¼Ò ºñ¿ëº¸´Ù ´õ Àú·ÅÇÏ´Ù¸é ±³Ã¼ÇÕ´Ï´Ù.
+			// ê¸°ì¡´ì˜ ìµœì†Œ ë¹„ìš©ë³´ë‹¤ ë” ì €ë ´í•˜ë‹¤ë©´ êµì²´í•©ë‹ˆë‹¤.
 			if (nextDistance < d[next]) {
 				d[next] = nextDistance;
 				pq.push(make_pair(-nextDistance, next));
@@ -36,7 +36,7 @@ void dijkstra(int start) {
 	}
 }
 int main(void) {
-	// ±âº»ÀûÀ¸·Î ¿¬°áµÇÁö ¾ÊÀº °æ¿ì ºñ¿ëÀº ¹«ÇÑÀÔ´Ï´Ù.
+	// ê¸°ë³¸ì ìœ¼ë¡œ ì—°ê²°ë˜ì§€ ì•Šì€ ê²½ìš° ë¹„ìš©ì€ ë¬´í•œì…ë‹ˆë‹¤.
 	for (int i = 1; i <= number; i++) {
 		d[i] = INF;
 	}
@@ -69,8 +69,64 @@ int main(void) {
 
 	dijkstra(1);
 
-	// °á°ú¸¦ Ãâ·ÂÇÕ´Ï´Ù.
+	// ê²°ê³¼ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
 	for (int i = 1; i <= number; i++) {
 		printf("%d ", d[i]);
 	}
+}
+
+// ------------------------ ë‹¤ë¥¸ ë²„ì „ -------------------------------
+
+// ì–¸ì–´ : C++ , (ì„±ê³µ/ì‹¤íŒ¨) : 1/0 , ë©”ëª¨ë¦¬ : 2024 KB , ì‹œê°„ : 0ms
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string.h> // memset
+#include <queue>
+
+using namespace std;
+
+#define X first
+#define Y second
+
+int v,e,st;
+
+// {ë¹„ìš©, ì •ì  ë²ˆí˜¸}
+vector<pair<int,int>> adj[20005];
+const int INF = 1e9+10;
+int d[20005];
+
+int main(void){
+    // ì…ì¶œë ¥ ì†ë„ ìµœì í™”
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+
+    cin>>v>>e>>st;
+    fill(d,d+v+1,INF);
+
+    while(e--){
+        int u,v,w;
+        cin>>u>>v>>w;
+        adj[u].push_back({w,v});
+    }
+    priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
+    d[st] = 0;
+    pq.push({d[st],st});
+
+    while(!pq.empty()){
+        auto cur = pq.top(); pq.pop();
+        if(d[cur.Y] != cur.X) continue; // ê±°ë¦¬ê°€ ë‹¤ë¥´ë©´ ì›ì†Œë¥¼ ë²„ë¦°ë‹¤.
+        for(auto nxt: adj[cur.Y]){
+            if(d[nxt.Y] <= d[cur.Y]+nxt.X) continue;
+            d[nxt.Y] = d[cur.Y] + nxt.X;
+            pq.push({d[nxt.Y],nxt.Y});
+        }
+    }
+
+    for(int i=1;i<=v;i++){
+        if(d[i] == INF) cout << "INF\n";
+        else cout<<d[i]<<"\n";
+    }
+
+    return 0;
 }
