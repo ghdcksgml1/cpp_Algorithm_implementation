@@ -75,7 +75,7 @@
   </tr>
   <tr>
     <td align="center">14</td>
-    <td align="center">크루스칼 알고리즘</td>
+    <td align="center">최소 스패닝 트리</td>
     <td align="center">Kruskal Algorithm</td>
   </tr>
   <tr>
