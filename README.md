@@ -193,4 +193,9 @@
     <td align="center">트라이</td>
     <td align="center">Trie</td>
   </tr>
+  <tr>
+    <td align="center">38</td>
+    <td align="center">머지소트 트리</td>
+    <td align="center">MergeSort Tree</td>
+  </tr>
 </table>
