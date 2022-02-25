@@ -198,4 +198,9 @@
     <td align="center">머지소트 트리</td>
     <td align="center">MergeSort Tree</td>
   </tr>
+  <tr>
+    <td align="center">39</td>
+    <td align="center">모스 알고리즘 + </td>
+    <td align="center">mo's Algorithm + Offline Query</td>
+  </tr>
 </table>
