@@ -200,7 +200,7 @@
   </tr>
   <tr>
     <td align="center">39</td>
-    <td align="center">모스 알고리즘 + </td>
+    <td align="center">모스 알고리즘 + 오프라인 쿼리</td>
     <td align="center">mo's Algorithm + Offline Query</td>
   </tr>
 </table>
