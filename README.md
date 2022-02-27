@@ -105,7 +105,7 @@
   </tr>
   <tr>
     <td align="center">20</td>
-    <td align="center">쿼드 트리</td>
+    <td align="center">분할 정복/td>
     <td align="center">Quad Tree</td>
   </tr>
   <tr>
