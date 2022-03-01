@@ -59,22 +59,26 @@ int main(void){
 
     for(int i=1;i<M;i++){
         cnt = 0;
-        while (st > q[i].start){
+        while (st > q[i].start){ // |q[i].start|--|--|--|st|
+            // Plus
             st--;
             if(cnt_num[arr[st]]==0) cnt+=1;
             cnt_num[arr[st]]++;
         }
-        while (st < q[i].start){
+        while (st < q[i].start){ // |st|--|--|--|q[i].start|
+            // Minus
             cnt_num[arr[st]]--;
             if(cnt_num[arr[st]]==0) cnt-=1;
             st++;
         }
-        while (en > q[i].end){
+        while (en > q[i].end){ // |q[i].end|--|--|--|en|
+            // Minus
             cnt_num[arr[en]]--;
             if(cnt_num[arr[en]]==0) cnt-=1;
             en--;
         }
-        while (en < q[i].end){
+        while (en < q[i].end){ // |en|--|--|--|q[i].end|
+            // Plus
             en++;
             if(cnt_num[arr[en]]==0) cnt+=1;
             cnt_num[arr[en]]++;
