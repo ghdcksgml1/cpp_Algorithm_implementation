@@ -5,8 +5,8 @@
 using namespace std;
 
 // https://www.youtube.com/watch?v=LQ3JHknGy8c&list=PLRx0vPvlEmdDHxCvAQS1_6XV4deOwfVrz&index=19
-// Å©·ç½ºÄ® ¾Ë°í¸®ÁòÀº °¡Àå ÀûÀº ºñ¿ëÀ¸·Î ¸ðµç ³ëµå¸¦ ¿¬°áÇÏ±â À§ÇØ »ç¿ëÇÏ´Â ¾Ë°í¸®Áò
-// ÃÖ¼Ò ºñ¿ë ½ÅÀå Æ®¸®
+// í¬ë£¨ìŠ¤ì¹¼ ì•Œê³ ë¦¬ì¦˜ì€ ê°€ìž¥ ì ì€ ë¹„ìš©ìœ¼ë¡œ ëª¨ë“  ë…¸ë“œë¥¼ ì—°ê²°í•˜ê¸° ìœ„í•´ ì‚¬ìš©í•˜ëŠ” ì•Œê³ ë¦¬ì¦˜
+// ìµœì†Œ ë¹„ìš© ì‹ ìž¥ íŠ¸ë¦¬
 
 int getParent(int parent[], int x) {
 	if (parent[x] == x) return x;
@@ -35,10 +35,12 @@ public:
 		this->node[1] = b;
 		this->distance = distance;
 	}
-	bool operator < (Edge& edge) {
-		return this->distance < edge.distance;
-	}
 };
+
+bool compare(Edge a,Edge b){
+	return a.distance < b.distance;	
+}
+
 int main(void) {
 	int n = 7;
 	int m = 11;
@@ -56,17 +58,17 @@ int main(void) {
 	v.push_back(Edge(5, 6, 45));
 	v.push_back(Edge(5, 7, 73));
 
-	// °£¼±ÀÇ ºñ¿ëÀ» ±âÁØÀ¸·Î ¿À¸§Â÷¼ø Á¤·Ä
-	sort(v.begin(), v.end());
+	// ê°„ì„ ì˜ ë¹„ìš©ì„ ê¸°ì¤€ìœ¼ë¡œ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
+	sort(v.begin(), v.end(), compare);
 
-	// °¢ Á¤Á¡ÀÌ Æ÷ÇÔµÈ ±×·¡ÇÁ°¡ ¾îµðÀÎÁö ÀúÀå
+	// ê° ì •ì ì´ í¬í•¨ëœ ê·¸ëž˜í”„ê°€ ì–´ë””ì¸ì§€ ì €ìž¥
 	int parent[7];
 	for (int i = 0; i < n; i++) {
 		parent[i] = i;
 	}
 	int sum = 0;
 	for (int i = 0; i < v.size(); i++) {
-		// »çÀÌÅ¬ÀÌ ¹ß»ýÇÏÁö ¾Ê´Â °æ¿ì ±×·¡ÇÁ¿¡ Æ÷ÇÔ
+		// ì‚¬ì´í´ì´ ë°œìƒí•˜ì§€ ì•ŠëŠ” ê²½ìš° ê·¸ëž˜í”„ì— í¬í•¨
 		if (!findParent(parent, v[i].node[0] - 1, v[i].node[1] - 1)) {
 			sum += v[i].distance;
 			unionParent(parent, v[i].node[0] - 1, v[i].node[1] - 1);
@@ -74,4 +76,6 @@ int main(void) {
 		}
 	}
 	printf("%d\n", sum);
+	
+	return 0;
 }
