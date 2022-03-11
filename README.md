@@ -245,6 +245,6 @@
     <td align="center">39</td>
     <td align="center">모스 알고리즘 + 오프라인 쿼리</td>
     <td align="center">mo's Algorithm + Offline Query</td>
-    <td align="center">O((N+Q)√N * T(N))</td>
+    <td align="center">O((N+Q)√N * T(N))<br/>(T(N): 모스 알고리즘에서 숫자를 늘리거나 줄일때의 연산량)</td>
   </tr>
 </table>
