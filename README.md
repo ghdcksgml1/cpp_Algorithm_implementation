@@ -129,7 +129,7 @@
   </tr>
   <tr>
     <td align="center">20</td>
-    <td align="center">분할 정복/td>
+    <td align="center">분할 정복</td>
     <td align="center">Quad Tree</td>
     <td align="center">O(N*logN)</td>
   </tr>
