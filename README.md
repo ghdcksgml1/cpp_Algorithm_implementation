@@ -35,25 +35,25 @@
     <td align="center">04</td>
     <td align="center">퀵 정렬</td>
     <td align="center">Quick Sort</td>
-    <td align="center">평균: O(NlogN), 최대: O(N<sup>2</sup>)</td>
+    <td align="center">평균: O(N*logN), 최대: O(N<sup>2</sup>)</td>
   </tr>
   <tr>
     <td align="center">05</td>
     <td align="center">병합 정렬</td>
     <td align="center">Merge Sort</td>
-    <td align="center">O(N<sup>2</sup>)</td>
+    <td align="center">O(N*logN)</td>
   </tr>
   <tr>
     <td align="center">06</td>
     <td align="center">STL::Sort 사용</td>
     <td align="center">sortMethod</td>
-    <td align="center">O(N<sup>2</sup>)</td>
+    <td align="center">O(N*logN)</td>
   </tr>
   <tr>
     <td align="center">07</td>
     <td align="center">힙 정렬</td>
     <td align="center">Heap Sort</td>
-    <td align="center">O(N<sup>2</sup>)</td>
+    <td align="center">O(N*logN)</td>
   </tr>
   <tr>
     <td align="center">08</td>
