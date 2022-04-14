@@ -1,76 +1,86 @@
+// Segement Tree : 구간 합 쿼리, 원소 한개 업데이트 구현
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <string.h> // memset
+#define MAX 1000001
 
 using namespace std;
+typedef long long ll;
 
-int N;
-vector<int> tree; // segment tree
+template <class T>
+class Tree{
+public:
+    T value = 0;
 
-// 합 구하기
-int merge(int left, int right){
-  return left+right; // sum
+    Tree(){
+        this->value = 0;
+    }
+
+    Tree(T val){
+        this->value = val;
+    }
+};
+
+Tree<ll> tree[MAX*4];
+
+ll arr[MAX];
+
+// 세그먼트 트리 만들기
+template <typename T>
+T buildRec(T node,T start,T end){
+    if(start == end){
+        return tree[node].value = arr[start];
+    }
+    T mid = (start + end) / 2;
+    return tree[node].value = buildRec(node*2,start,mid) + buildRec(node*2+1,mid+1,end);
 }
 
-// 구간의 합을 tree 벡터에 저장해줌
-int buildRec(const int arr[],int node, int nodeLeft, int nodeRight){
-  if(nodeLeft == nodeRight){
-    return tree[node] = arr[nodeLeft];
-  }
-  int mid = nodeLeft + (nodeRight - nodeLeft)/2;
-  int leftVal = buildRec(arr,node*2,nodeLeft,mid);
-  int rightVal = buildRec(arr,node*2+1,mid+1,nodeRight);
-
-  return tree[node] = merge(leftVal,rightVal);
+// 구간 합
+template <typename T>
+T queryRec(T left,T right,T node,T start,T end){
+    if(left>end || right<start) return 0;
+    if(left<=start && end<=end){
+        return tree[node].value;
+    }
+    T mid = (start + end) / 2;
+    return queryRec(left,right,node*2,start,mid) + queryRec(left,right,node*2+1,mid+1,end);
 }
 
-// 빌더
-int build(const int arr[], int size){
-  tree.resize(size*4);
-  
-  return buildRec(arr,1,0,N-1);
-}
+// 구간 업데이트
+template <typename T>
+void updateRec(T target,T value,T node,T start,T end){
+    if(target>end || target<start) {
+        tree[node].value;
+        return;
+    }
+    if(start == end){
+        tree[node].value = value;
+        return;
+    }
+    T mid = (start + end) / 2;
+    updateRec(target,value,node*2,start,mid);
+    updateRec(target,value,node*2+1,mid+1,end);
 
-// Query로 구간이 주어지면, 구간을 구간 안에 들어가는 segment를
-// 찾아서 연산 결과를 구함
-// (Build)와 마찬가지로 구간을 2개로 나눠 내려가면서 segment를 찾아나감
-int queryRec(int left,int right,int node,int nodeLeft,int nodeRight){
-  if(right<nodeLeft || nodeRight < left)
-    return 0; // default value
-
-  if(left<=nodeLeft && nodeRight <= right)
-    return tree[node];
-  
-  int mid = nodeLeft + (nodeRight - nodeLeft)/2;
-  return merge(queryRec(left, right, node*2, nodeLeft, mid),
-              queryRec(left, right, node*2+1, mid+1, nodeRight));
-}
-
-//inclusive
-int query(int left, int right){
-  return queryRec(left, right, 1, 0, N-1);
-}
-
-int updateRec(int index,int newValue,int node,int nodeLeft,int nodeRight){
-  if(index < nodeLeft || index > nodeRight)
-    return tree[node];
-
-  if(nodeLeft == nodeRight)
-    return tree[node] = newValue;
-  
-  int mid = nodeLeft+(nodeRight-nodeLeft)/2;
-  int leftVal = updateRec(index, newValue, node*2, nodeLeft, mid);
-  int rightVal = updateRec(index, newValue, node*2+1, mid+1, nodeRight);
-  return tree[node] = merge(leftVal,rightVal);
-}
-
-int update(int index,int newValue){
-  return updateRec(index, newValue, 1, 0, N-1);
+    tree[node].value = tree[node*2].value + tree[node*2+1].value;
+    return ;
 }
 
 int main(void){
-  N = 15;
-  int arr[] = {1,3,11,6,7,10,14,9,18,16,5,4,2,8,19};
+    // 입출력 속도 최적화
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
 
-  cout<<build(arr,N);
-  return 0;
+    ll N; cin>>N;
+    for(ll i=1;i<=N;i++){
+        cin>>arr[i];
+    }
+
+    buildRec<ll>(1,1,N); // 트리 생성
+
+    cout<<queryRec<ll>(1,N,1,1,N)<<'\n'; // 1~N까지의 구간합 출력
+    updateRec<ll>(3,10,1,1,N); // 3번째 원소값을 10으로 변경
+    cout<<queryRec<ll>(1,N,1,1,N)<<'\n'; // 1~N까지의 구간합 출력
+
+    return 0;
 }
