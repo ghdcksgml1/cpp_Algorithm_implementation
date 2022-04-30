@@ -247,4 +247,10 @@
     <td align="center">mo's Algorithm + Offline Query</td>
     <td align="center">O((N+Q)√N * T(N))<br/>(T(N): 모스 알고리즘에서 숫자를 늘리거나 줄일때의 연산량)</td>
   </tr>
+  <tr>
+    <td align="center">40</td>
+    <td align="center">오일러회로 알고리즘</td>
+    <td align="center">Hierholzer's Algorithm</td>
+    <td align="center">O(E) (V: 정점의 수, E: 간선의 수)</td>
+  </tr>
 </table>
