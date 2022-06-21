@@ -253,4 +253,10 @@
     <td align="center">Hierholzer's Algorithm</td>
     <td align="center">O(E) (V: 정점의 수, E: 간선의 수)</td>
   </tr>
+  <tr>
+    <td align="center">41</td>
+    <td align="center">오일러경로 테크닉</td>
+    <td align="center">Euler tour technic</td>
+    <td align="center">O(N) : 각 노드의 인덱스를 붙여 DFS탐색을 통해 어디서 들어가고 빠져나오는지를 기록</td>
+  </tr>
 </table>
