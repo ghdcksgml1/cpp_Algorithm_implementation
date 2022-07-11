@@ -65,6 +65,12 @@ int main(void){
             if(cnt_num[arr[st]]==0) cnt+=1;
             cnt_num[arr[st]]++;
         }
+        while (en < q[i].end){ // |en|--|--|--|q[i].end|
+            // Plus
+            en++;
+            if(cnt_num[arr[en]]==0) cnt+=1;
+            cnt_num[arr[en]]++;
+        }
         while (st < q[i].start){ // |st|--|--|--|q[i].start|
             // Minus
             cnt_num[arr[st]]--;
@@ -77,12 +83,7 @@ int main(void){
             if(cnt_num[arr[en]]==0) cnt-=1;
             en--;
         }
-        while (en < q[i].end){ // |en|--|--|--|q[i].end|
-            // Plus
-            en++;
-            if(cnt_num[arr[en]]==0) cnt+=1;
-            cnt_num[arr[en]]++;
-        }
+    
         mo_res[q[i].idx] = mo_res[q[i-1].idx] + cnt;
     }
 
